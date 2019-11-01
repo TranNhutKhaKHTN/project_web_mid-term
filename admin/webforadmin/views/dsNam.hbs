@@ -1,0 +1,44 @@
+<h3 align="center">Doanh số/tuần</h3>
+<div id="line" align="center"></div>
+ <script>
+         Ext.onReady(function() {
+            Ext.create('Ext.chart.CartesianChart', {
+               renderTo: 'line',
+               width: 1000,
+               height: 1500,
+               
+               store: {
+                  fields: ['name', 'g1'],
+                  data: [
+                     {"name": "2015", "g1": 4100},
+                     {"name": "2016", "g1": 4330},
+                     {"name": "2017", "g1": 4250},
+                     {"name": "2018", "g1": 4390},
+                     {"name": "2019", "g1": 4590}                    
+                  ]
+               },
+               legend: {
+                  docked: 'bottom'
+               },
+
+               //define x and y axis.
+               axes: [{
+                  type: 'numeric',
+                  position: 'left'
+               }, {
+                  type: 'category',
+                  visibleRange: [0, 1],
+                  position: 'bottom'
+               }],
+
+               //define the actual series
+               series: [{
+                  type: 'line',
+                  xField: 'name',
+                  yField: 'g1',
+                  title: 'Normal'
+               }]
+            });
+         });
+         
+      </script>

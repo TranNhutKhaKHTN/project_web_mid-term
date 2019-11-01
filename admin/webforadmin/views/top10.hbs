@@ -1,0 +1,54 @@
+<h3 align="center">TOP 10</h3>
+<div id="bar" align="center"></div>
+<script>
+         Ext.onReady(function() {
+            Ext.create('Ext.chart.CartesianChart', {
+               renderTo: 'bar',
+               width: 1000,
+               height: 600,
+               flipXY: true,
+               
+               store: {
+                  fields: ['name', 'g1'],
+                  data: [
+                     {"name": "Nokia 1", "g1": 1000},
+                     {"name": "Nokia 2", "g1": 1500},
+                     {"name": "Nokia 3", "g1": 3000},
+                     {"name": "Nokia 4", "g1": 4500},
+                     {"name": "Nokia 5", "g1": 3500},
+                     {"name": "Nokia 6", "g1": 2000},
+                     {"name": "Nokia 7", "g1": 1600},
+                     {"name": "Nokia 8", "g1": 2500},
+                     {"name": "Nokia 9", "g1": 5000},
+                     {"name": "Nokia 10", "g1": 3300}
+                  ]
+               },  
+
+               //set legend configuration
+               legend: {
+                  docked: 'right'
+               },
+
+               //define the x and y-axis configuration.
+               axes: [{
+                  type: 'numeric',
+                  position: 'bottom',
+                  grid: true,
+                  minimum: 0
+               }, {
+                  type: 'category',
+                  position: 'left'
+               }],
+
+               //define the actual bar series.
+               series: [{
+                  type: 'bar',
+                  xField: 'name',
+                  yField: ['g1'],
+                  axis: 'left'
+               }]
+            });
+         });
+
+
+      </script>

@@ -62,15 +62,47 @@ router.get('/chancepass', function(req, res, next) {
   res.render('chancepass', { title: 'Đổi mật khẩu' });
 });
 
-router.get('/history', function(req, res, next) {
-  res.render('history', { title: 'history' });
+router.get('/QLngDung', function(req, res, next) {
+  res.render('QLngDung', { title: 'quản lý người dùng' });
 });
 
-router.get('/delivery', function(req, res, next) {
-  res.render('delivery', { title: 'delivery' });
+router.get('/thongke', function(req, res, next) {
+  res.render('thongke', { title: 'thống kê' });
 });
 
-router.get('/cart', function(req, res, next) {
-  res.render('cart', { title: 'cart' });
+router.get('/QLDonHang', function(req, res, next) {
+  res.render('QLDonHang', { title: 'Quản lý đơn hàng' });
+});
+
+router.get('/QLSanPham', function(req, res, next) {
+  res.render('QLSanPham', { title: 'Quản lý sản phẩm' });
+});
+
+router.get('/QLGianHang', function(req, res, next) {
+  res.render('QLGianHang', { title: 'Quản lý gian hàng' });
+});
+
+router.get('/Top10', function(req, res, next) {
+  res.render('top10', { title: 'TOP10' });
+});
+
+router.get('/dsNgay', function(req, res, next) {
+  res.render('dsNgay', { title: 'Doanh số/ngày' });
+});
+
+router.get('/dsTuan', function(req, res, next) {
+  res.render('dsTuan', { title: 'Doanh số/tuần' });
+});
+
+router.get('/dsThang', function(req, res, next) {
+  res.render('dsThang', { title: 'Doanh số/tháng' });
+});
+
+router.get('/dsQuy', function(req, res, next) {
+  res.render('dsQuy', { title: 'Doanh số/quý' });
+});
+
+router.get('/dsNam', function(req, res, next) {
+  res.render('dsNam', { title: 'Doanh số/năm' });
 });
 module.exports = router;

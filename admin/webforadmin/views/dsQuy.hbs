@@ -1,0 +1,43 @@
+<h3 align="center">Doanh số/quý</h3>
+<div id="line" align="center"></div>
+ <script>
+         Ext.onReady(function() {
+            Ext.create('Ext.chart.CartesianChart', {
+               renderTo: 'line',
+               width: 1000,
+               height: 1500,
+               
+               store: {
+                  fields: ['name', 'g1'],
+                  data: [
+                     {"name": "1", "g1": 2300},
+                     {"name": "2", "g1": 2430},
+                     {"name": "3", "g1": 2450},
+                     {"name": "4", "g1": 2690}                    
+                  ]
+               },
+               legend: {
+                  docked: 'bottom'
+               },
+
+               //define x and y axis.
+               axes: [{
+                  type: 'numeric',
+                  position: 'left'
+               }, {
+                  type: 'category',
+                  visibleRange: [0, 1],
+                  position: 'bottom'
+               }],
+
+               //define the actual series
+               series: [{
+                  type: 'line',
+                  xField: 'name',
+                  yField: 'g1',
+                  title: 'Normal'
+               }]
+            });
+         });
+         
+      </script>
